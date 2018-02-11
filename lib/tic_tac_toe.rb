@@ -22,8 +22,8 @@ class TicTacToe
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
   
-  def input_to_index(user_input)
-    index = user_input.to_i - 1
+  def input_to_index(input)
+    index = input.to_i - 1
   end
   
   def move(index, token="X")
@@ -52,4 +52,16 @@ class TicTacToe
     turn_count%2 == 0? "X" : "O"
   end
   
+  def turn(board)
+    puts "Please enter 1-9:"
+    input = gets.strip
+    index = input_to_index(input)
+    if valid_move?(index)
+      move(index, current_player) #this uses another function as an input, which is I think is OK
+      display_board
+    else
+      turn(board)
+    end
+  end
+
 end
