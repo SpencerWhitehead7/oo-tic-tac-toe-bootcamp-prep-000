@@ -38,4 +38,14 @@ class TicTacToe
     index.between?(0,8) && !position_taken?(index)
   end
   
+  def turn_count
+    count = 0
+    board.each do |slot|
+      if slot == "X" || slot == "O"
+        count += 1
+      end
+    end
+    return count
+  end
+  
 end
