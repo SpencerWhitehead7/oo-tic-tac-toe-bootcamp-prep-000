@@ -60,7 +60,7 @@ class TicTacToe
       move(index, current_player) #this uses another function as an input, which is I think is OK
       display_board
     else
-      turn(board)
+      turn
     end
   end
 
