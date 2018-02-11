@@ -101,4 +101,12 @@ class TicTacToe
     end 
   end
   
+  def winner
+    if won?
+      return won?[0]
+    else
+      return nil
+    end
+  end
+  
 end
